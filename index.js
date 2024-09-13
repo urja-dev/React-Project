@@ -4,12 +4,15 @@ import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
 
 import Header from "./src/components/Header";
 import Body from "./src/components/Body";
-import About from "./src/components/About";
+// import About from "./src/components/About";
 import Contact from "./src/components/Contact";
 import Error from "./src/components/Error";
 import User from "./src/components/User";
 import UserContext from "./src/utils/UserContext";
 import "./App.css";
+
+const Recepies = lazy(() => import("./src/components/Recepies"));
+const About = lazy(() => import("./src/components/About"));
 
 const AppLayout = () => {
   const [userName, setUserName] = useState();
@@ -28,9 +31,6 @@ const AppLayout = () => {
     </UserContext.Provider>
   );
 };
-
-const Recepies = lazy(() => import("./src/components/Recepies"));
-const About = lazy(() => import("./src/components/About"));
 
 const appRouter = createBrowserRouter([
   {
